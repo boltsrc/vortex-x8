@@ -1,0 +1,42 @@
+{
+  "name": "vortex-load-tester-x8",
+  "version": "8.0.0",
+  "description": "Ultimate high-performance load testing framework with 3000+ RPS capability targeting NSG-protected sites",
+  "main": "Vortex_api.js",
+  "scripts": {
+    "start": "node Vortex_api.js",
+    "dev": "node Vortex_api.js",
+    "test": "echo \"Ready for ultimate load testing\" && exit 0",
+    "build-tcp": "go build -o vortex_tcp_engine vortex_tcp_engine.go && chmod +x vortex_tcp_engine",
+    "setup": "npm install && npm run build-tcp"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  },
+  "devDependencies": {},
+  "keywords": [
+    "load-testing",
+    "performance",
+    "http",
+    "tcp",
+    "vortex",
+    "3000-rps",
+    "nsg-bypass",
+    "ultimate"
+  ],
+  "author": "Vortex Load Testing Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/vortex-x8"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/vortex-x8/issues"
+  },
+  "homepage": "https://github.com/your-username/vortex-x8#readme"
+}
