@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vortex - Load Testing Framework</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Animation -->
+    <div id="loading-overlay" class="loading-overlay">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="title">
+                <i data-feather="zap" class="title-icon"></i>
+                Vortex
+            </h1>
+            <p class="subtitle">Powered by Vortex Engine</p>
+        </header>
+
+        <main class="main-content">
+            <!-- Test Configuration -->
+            <section class="test-config" id="test-config">
+                <h2 class="section-title">
+                    <i data-feather="settings" class="section-icon"></i>
+                    Vortex Configuration
+                </h2>
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="target" class="form-label">
+                            <i data-feather="globe" class="input-icon"></i>
+                            Target (IPv4/Domain)
+                        </label>
+                        <input type="text" id="target" class="form-input" placeholder="example.com or 192.168.1.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="port" class="form-label">
+                            <i data-feather="hash" class="input-icon"></i>
+                            Port
+                        </label>
+                        <input type="number" id="port" class="form-input" placeholder="80" min="1" max="65535" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="method" class="form-label">
+                            <i data-feather="layers" class="input-icon"></i>
+                            Method
+                        </label>
+                        <select id="method" class="form-select" required>
+                            <option value="">Select Method</option>
+                            <option value="HTTP">HTTP</option>
+                            <option value="TCP">TCP</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="duration" class="form-label">
+                            <i data-feather="clock" class="input-icon"></i>
+                            Duration (seconds)
+                        </label>
+                        <div class="duration-container">
+                            <input type="range" id="duration-slider" class="duration-slider" min="1" max="120" value="30">
+                            <input type="number" id="duration" class="form-input duration-input" min="1" max="120" value="30" required>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="start-vortex" class="btn btn-primary">
+                        <i data-feather="play" class="btn-icon"></i>
+                    </button>
+                    <button id="stop-vortex" class="btn btn-secondary" disabled>
+                        <i data-feather="stop-circle" class="btn-icon"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Live Metrics -->
+            <section class="metrics-section" id="metrics-section" style="display: none;">
+                <h2 class="section-title">
+                    <i data-feather="activity" class="section-icon"></i>
+                    Live Metrics
+                </h2>
+
+                <div class="metrics-grid">
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i data-feather="clock" class="metric-icon"></i>
+                            <span class="metric-label">Remaining</span>
+                        </div>
+                        <div class="metric-value" id="metric-remaining">-</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i data-feather="zap" class="metric-icon"></i>
+                            <span class="metric-label">RPS</span>
+                        </div>
+                        <div class="metric-value" id="metric-rps">-</div>
+                    </div>
+
+                    <div class="metric-card">
+                        <div class="metric-header">
+                            <i data-feather="send" class="metric-icon"></i>
+                            <span class="metric-label">Sent</span>
+                        </div>
+                        <div class="metric-value" id="metric-sent">-</div>
+                    </div>
+
+                    <div class="metric-card success">
+                        <div class="metric-header">
+                            <i data-feather="check-circle" class="metric-icon"></i>
+                            <span class="metric-label">Success</span>
+                        </div>
+                        <div class="metric-value" id="metric-success">-</div>
+                    </div>
+
+                    <div class="metric-card error">
+                        <div class="metric-header">
+                            <i data-feather="x-circle" class="metric-icon"></i>
+                            <span class="metric-label">Failed</span>
+                        </div>
+                        <div class="metric-value" id="metric-failed">-</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Status Messages -->
+            <section class="status-section">
+                <div id="status-message" class="status-message"></div>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <div class="footer-brand">
+                <span class="brand-name">Programmed By Paxbolt</span>
+                <div class="footer-email">
+                    <i data-feather="mail" class="email-icon"></i>
+                    <span class="email-text">paxbolt@outlook.com</span>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                © Paxbolt 2025-2025
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.28.0/feather.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
